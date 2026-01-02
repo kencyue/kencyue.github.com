@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>職場外掛工程學 | Workplace Plugin Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0f172a;
+    --primary-light: #1e293b;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --bg-light: #f8fafc;
+    --text-main: #334155;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --text-light: #cbd5e1;
+    --border: #e2e8f0;
+    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-top: 0;
+    line-height: 1.3;
+    word-break: keep-all; 
+  }
+
+  p { margin-bottom: 1.2rem; }
+  a { text-decoration: none; transition: 0.3s; }
+
+  /* Layout */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 8px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    padding: 160px 0 120px;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    background-image: url('http://googleusercontent.com/image_generation_content/0');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
+    z-index: 1;
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero h1 {
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 4rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    white-space: nowrap;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .hero p.subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+  }
+
+  /* Pain Points */
+  .pain-points {
+    padding: 80px 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pain-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 60px;
+  }
+
+  .pain-header h2 { font-size: 2rem; margin-bottom: 16px; }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+  }
+
+  .pain-card {
+    background: #fff5f5;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #fed7d7;
+  }
+
+  .pain-card h3 {
+    color: #9b2c2c;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    white-space: nowrap;
+  }
+  
+  .pain-card p { color: #4a5568; margin: 0; font-size: 0.95rem; }
+
+  .transition-text {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  /* Philosophy */
+  .philosophy {
+    padding: 100px 0;
+    background: var(--bg-light);
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+  }
+
+  .feature-card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+    box-shadow: var(--card-shadow);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+  }
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    background: #eff6ff;
+    color: var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .philosophy-quote {
+    margin-top: 48px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid var(--accent);
+    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+  }
+  
+  .philosophy-quote h3 {
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+  }
+
+  .philosophy-quote p {
+    margin: 0;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1.15rem;
+  }
+
+  /* Bio Section */
+  .bio-section {
+    padding: 100px 0;
+    background: var(--primary);
+    color: var(--text-light);
+    overflow: hidden;
+  }
+
+  .bio-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .profile-card {
+    position: sticky;
+    top: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 32px;
+    border-radius: 24px;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .timeline {
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 30px;
+    margin-top: 30px;
+  }
+
+  .timeline-item { position: relative; margin-bottom: 40px; }
+  .timeline-marker {
+    position: absolute;
+    left: -39px; top: 4px;
+    width: 16px; height: 16px;
+    background: var(--primary);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+  }
+
+  .timeline-year {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .timeline-title { color: #ffffff; font-size: 1.25rem; margin-bottom: 8px; }
+  .timeline-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); margin: 0; }
+
+  /* Stack Section - Bubbles Edition */
+  .stack-section {
+    padding: 80px 0;
+    background: #ffffff;
+  }
+  
+  .stack-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .bubble-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .bubble {
+    display: inline-block;
+    padding: 10px 24px;
+    background: #eff6ff;
+    color: #2563eb;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid #dbeafe;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  .bubble:hover {
+    background: #2563eb;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  }
+
+  .bubble.highlight {
+    background: #f3e8ff;
+    color: #7e22ce;
+    border-color: #e9d5ff;
+  }
+  
+  .bubble.highlight:hover {
+    background: #7e22ce;
+    color: #ffffff;
+  }
+
+  /* Dual Service CTA Section (New) */
+  .services-section {
+    padding: 100px 0;
+    background: var(--bg-light);
+    border-top: 1px solid var(--border);
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .services-header h2 { font-size: 2.2rem; margin-bottom: 16px; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: #ffffff;
+    padding: 48px 32px;
+    border-radius: 24px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: transform 0.3s;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    display: inline-block;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+  }
+
+  .service-card p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.2s;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  /* Primary Button (Course) */
+  .btn-primary {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+
+  /* Outline Button (Service) */
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+  }
+  .btn-outline:hover {
+    background: var(--accent);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  footer {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    background: #ffffff;
+    border-top: 1px solid var(--border);
+  }
+
+  /* RWD */
+  @media (max-width: 900px) {
+    .hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); }
+    .bio-layout { grid-template-columns: 1fr; gap: 40px; }
+    .profile-card { position: static; display: flex; align-items: center; text-align: left; gap: 20px; padding: 24px; }
+    .avatar { width: 80px; height: 80px; margin-bottom: 0; }
+    .profile-info { flex: 1; }
+    .services-grid { grid-template-columns: 1fr; max-width: 500px; } /* 手機版服務卡片垂直排列 */
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 120px 0 80px; }
+    .profile-card { display: block; text-align: center; }
+    .avatar { width: 100px; height: 100px; margin-bottom: 16px; }
+    .timeline { padding-left: 20px; }
+    .timeline-marker { left: -29px; }
+    .pain-card h3 { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">Workplace Plugin Engineering</span>
+    <h1>職場外掛工程學</h1>
+    <p class="subtitle">
+      不用改動公司系統，也能替工作加功能。<br>
+      我們提供「實戰課程教學」與「客製化開發」雙軌服務，解決你的數位痛點。
+    </p>
+    <a href="#services" style="color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.3); font-size: 0.9rem;">查看服務項目 ↓</a>
+  </div>
+</section>
+
+<!-- Pain Points -->
+<section class="pain-points">
+  <div class="container">
+    <div class="pain-header">
+      <h2>工作常常卡在這些地方？</h2>
+      <p style="color: var(--text-muted);">明明是簡單的需求，卻因為系統限制，變成了每天的惡夢。</p>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card">
+        <h3>
+          <span style="font-size: 1.5rem;">🛑</span>
+          系統僵化難改
+        </h3>
+        <p>廠商報價天價，或是根本找不到原開發者。為了配合這些老舊系統，你被迫增加大量的人工作業。</p>
+      </div>
+      <div class="pain-card">
+        <h3>
+          <span style="font-size: 1.5rem;">🤖</span>
+          無限複製貼上
+        </h3>
+        <p>每天花好幾小時在 Excel、ERP 和網頁之間搬運資料。做著機械般的工作，覺得自己毫無價值。</p>
+      </div>
+      <div class="pain-card">
+        <h3>
+          <span style="font-size: 1.5rem;">⏳</span>
+          IT 排程遙遙無期
+        </h3>
+        <p>只是一個小小的功能或報表需求，IT 卻說要排隊半年。求人不如求己，你需要更快的解決方案。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="container">
+    <div style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
+      <h2>好的工程，是把解法放在對的位置</h2>
+      <p style="color: var(--text-muted);">不追求複雜技術，只追求解決眼前的真實問題。</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="feature-card">
+        <div class="feature-icon">01</div>
+        <h3>瀏覽器就是解法</h3>
+        <p>不必動到後端伺服器，直接在瀏覽器端（User Side）處理掉大部分的痛點。速度快、風險低。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">02</div>
+        <h3>拒絕殺雞用牛刀</h3>
+        <p>如果不需多人共用，就不需要架設資料庫。用輕量化工具解決問題，避免維護成本。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">03</div>
+        <h3>實用至上</h3>
+        <p>我不教怎麼寫漂亮的架構，只教怎麼讓你在明天的工作中，準時下班。</p>
+      </div>
+    </div>
+
+    <div class="philosophy-quote">
+      <h3>我不特別推廣任何程式語言</h3>
+      <p>每個程式語言的本質都一樣，只是拿來解決問題的工具。<br>重點在於「如何解決問題」，而不是工具本身。</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="bio-section">
+  <div class="container">
+    <div class="bio-layout">
+      <aside>
+        <div class="profile-card">
+          <img src="https://i.meee.com.tw/VKyS82H.jpg" alt="Ken Cyue" class="avatar">
+          <div class="profile-info">
+            <h3 class="profile-name" style="margin: 0; color: #fff;">Ken Cyue</h3>
+            <p style="color: var(--accent); margin: 4px 0 8px; font-weight: 600; font-size: 0.9rem;">非典型全端開發者</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0; line-height: 1.5;">
+              13+ 年實戰經驗。<br>擅長用最少資源，解決最雜的問題。
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <div class="bio-text">
+        <h2 style="color: #fff; margin-bottom: 24px;">從手刻代碼到 AI 賦能</h2>
+        <p style="color: rgba(255,255,255,0.8);">技術是拿來用的，不是拿來秀的。這是我 13 年來的體悟。</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <span class="timeline-year">啟蒙期</span>
+            <h3 class="timeline-title">不甘於現成工具</h3>
+            <p class="timeline-text">
+              早期大家都用傻瓜軟體做網頁，但我為了更自由的排版，堅持鑽研原始碼。這種「想跳出框架」的性格，決定了我日後的開發風格。
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <span class="timeline-year">成長期</span>
+            <h3 class="timeline-title">發現動態網頁的威力</h3>
+            <p class="timeline-text">
+              從靜態網頁進化到資料庫應用，我發現只要掌握資料流動，就能做出讓人驚艷的功能。這是我第一次體驗到「工程師的生產力」。
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <span class="timeline-year">實戰期</span>
+            <h3 class="timeline-title">解決僵化系統的痛</h3>
+            <p class="timeline-text">
+              進入職場後，面對無法修改的老舊系統，我開始用「外掛式」的腳本與小工具，繞過限制解決問題，大幅提升部門效率。
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <span class="timeline-year">現在</span>
+            <h3 class="timeline-title">AI 讓效率翻倍</h3>
+            <p class="timeline-text">
+              AI 是我現在最強的助手。以前花 8 小時寫的功能，現在 8 分鐘就能完成。我專注於邏輯與架構，繁瑣的代碼就交給 AI。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bubbles Tech Section -->
+<section class="stack-section">
+  <div class="container">
+    <div class="stack-container">
+      <h2>我們使用的核心技術生態</h2>
+      <p style="color: var(--text-muted); font-size: 1.1rem;">
+        不論是課程教學還是代工服務，我們都使用這套高效率、低成本的現代化技術棧。
+      </p>
+      
+      <div class="bubble-container">
+        <span class="bubble">Userscript 使用者腳本</span>
+        <span class="bubble highlight">AI Copilot Workflow</span>
+        <span class="bubble">Firebase</span>
+        <span class="bubble">Supabase</span>
+        <span class="bubble highlight">IndexedDB</span>
+        <span class="bubble">JavaScript (ES6+)</span>
+        <span class="bubble">Python Automation</span>
+        <span class="bubble">自動化串接</span>
+        <span class="bubble">網頁資料抓取</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dual Services CTA -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="services-header">
+      <h2>您希望如何解決問題？</h2>
+      <p style="color: var(--text-muted); font-size: 1.1rem;">我們提供彈性的方案，依照您的時間與預算做選擇。</p>
+    </div>
+
+    <div class="services-grid">
+      
+      <!-- Option 1: Course -->
+      <div class="service-card">
+        <div>
+          <div class="service-icon">👨‍💻</div>
+          <h3>我想學會這套技術</h3>
+          <p>
+            適合想擁有「解決問題能力」的您。<br>
+            透過實戰課程，學習如何利用 AI 與現代工具，自己動手打造職場外掛。
+          </p>
+        </div>
+        <a href="#" class="btn btn-primary">瀏覽實戰課程</a>
+      </div>
+
+      <!-- Option 2: Outsourcing -->
+      <div class="service-card">
+        <div>
+          <div class="service-icon">🚀</div>
+          <h3>我需要直接的成果</h3>
+          <p>
+            適合預算充足、但時間寶貴的您。<br>
+            告訴我們需求，由我們為您量身打造專屬工具，直接解決當下的痛點。
+          </p>
+        </div>
+        <a href="#" class="btn btn-outline">預約客製化諮詢</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Workplace Plugin Engineering
+  </div>
+</footer>
+
+</body>
+</html>
