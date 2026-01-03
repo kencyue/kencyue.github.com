@@ -74,7 +74,8 @@
     text-align: center;
     color: #ffffff;
     overflow: hidden;
-    background-image: url('http://googleusercontent.com/image_generation_content/0');
+    /* Updated Background Image */
+    background-image: url('https://i.meee.com.tw/IEsk4Hr.png');
     background-size: cover;
     background-position: center;
   }
@@ -254,6 +255,43 @@
     margin-bottom: 20px;
   }
 
+  /* Social Links for Profile */
+  .profile-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .profile-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: 0.2s;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .profile-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .profile-link svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
   .timeline {
     border-left: 2px solid rgba(255, 255, 255, 0.1);
     padding-left: 30px;
@@ -332,7 +370,7 @@
     color: #ffffff;
   }
 
-  /* Dual Service CTA Section (New) */
+  /* Dual Service CTA Section */
   .services-section {
     padding: 100px 0;
     background: var(--bg-light);
@@ -438,10 +476,11 @@
   @media (max-width: 900px) {
     .hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); }
     .bio-layout { grid-template-columns: 1fr; gap: 40px; }
-    .profile-card { position: static; display: flex; align-items: center; text-align: left; gap: 20px; padding: 24px; }
-    .avatar { width: 80px; height: 80px; margin-bottom: 0; }
-    .profile-info { flex: 1; }
-    .services-grid { grid-template-columns: 1fr; max-width: 500px; } /* 手機版服務卡片垂直排列 */
+    .profile-card { position: static; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; padding: 32px; }
+    .avatar { width: 120px; height: 120px; margin-bottom: 16px; }
+    .profile-info { width: 100%; }
+    .profile-links { justify-content: center; } /* 手機版置中 */
+    .services-grid { grid-template-columns: 1fr; max-width: 500px; } 
   }
 
   @media (max-width: 600px) {
@@ -528,8 +567,8 @@
     </div>
 
     <div class="philosophy-quote">
-      <h3>我不特別推廣任何程式語言</h3>
-      <p>每個程式語言的本質都一樣，只是拿來解決問題的工具。<br>重點在於「如何解決問題」，而不是工具本身。</p>
+      <h3>我不特別推廣哪一種程式語言</h3>
+      <p>程式語言的本質都一樣，只是拿來解決問題的工具。<br>重點在於「如何解決問題」，而不是工具本身。</p>
     </div>
 
   </div>
@@ -547,6 +586,17 @@
             <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0; line-height: 1.5;">
               13+ 年實戰經驗。<br>擅長用最少資源，解決最雜的問題。
             </p>
+
+            <div class="profile-links">
+                <a href="https://github.com/kencyue" target="_blank" class="profile-link" title="GitHub">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="#" class="profile-link" title="作品集">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                    <span>作品集</span>
+                </a>
+            </div>
           </div>
         </div>
       </aside>
@@ -614,8 +664,9 @@
         <span class="bubble highlight">IndexedDB</span>
         <span class="bubble">JavaScript (ES6+)</span>
         <span class="bubble">Python Automation</span>
-        <span class="bubble">自動化串接</span>
-        <span class="bubble">網頁資料抓取</span>
+        <span class="bubble">API串接</span>
+        <span class="bubble">網頁爬蟲</span>
+        <span class="bubble">Gemini Canvas</span>
       </div>
     </div>
   </div>
