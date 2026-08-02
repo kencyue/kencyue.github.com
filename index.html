@@ -596,6 +596,16 @@
     padding-right: 40px;
   }
 
+  .portfolio-modal-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
   .portfolio-modal-header h2 {
     font-size: 1.9rem;
     margin-bottom: 8px;
@@ -608,13 +618,13 @@
 
   .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 28px;
   }
 
   .portfolio-card {
     border: 1px solid var(--border);
-    border-radius: 18px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -628,11 +638,50 @@
     border-color: var(--accent);
   }
 
+  .portfolio-card.is-static:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border);
+  }
+
+  /* Screenshot shown inside a lightweight "browser window" frame so raw
+     app/UI screenshots feel like a curated shot instead of a random crop. */
+  .portfolio-card-shot {
+    background: #e7ebf1;
+    padding: 14px 14px 0;
+  }
+
+  .portfolio-card-browserbar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 2px 10px;
+  }
+
+  .portfolio-card-browserbar .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .portfolio-card-browserbar .dot-red { background: #f47067; }
+  .portfolio-card-browserbar .dot-yellow { background: #f5bd4f; }
+  .portfolio-card-browserbar .dot-green { background: #62c554; }
+
+  .portfolio-card-image-wrap {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 -1px 0 rgba(15, 23, 42, 0.04) inset;
+  }
+
   .portfolio-card-image {
     width: 100%;
     aspect-ratio: 16 / 10;
     object-fit: cover;
-    background: var(--bg-light);
+    object-position: top center;
+    background: #fff;
     display: block;
   }
 
@@ -678,8 +727,24 @@
     color: #fff;
   }
 
+  /* Static state: no url/download available, so it's plain text, not a button */
+  .portfolio-card-action.is-static {
+    border-color: transparent;
+    background: var(--bg-light);
+    color: var(--text-muted);
+    cursor: default;
+    font-weight: 500;
+  }
+
+  .portfolio-card-action.is-static:hover {
+    background: var(--bg-light);
+    color: var(--text-muted);
+  }
+
   .portfolio-card-tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -698,6 +763,11 @@
   .portfolio-card-tag.tag-download {
     background: #f0fdf4;
     color: #16a34a;
+  }
+
+  .portfolio-card-tag.tag-none {
+    background: var(--bg-light);
+    color: var(--text-muted);
   }
 
   .portfolio-empty {
@@ -970,7 +1040,9 @@
   <div class="portfolio-modal">
     <button class="portfolio-modal-close" id="portfolio-close" aria-label="關閉">&times;</button>
     <div class="portfolio-modal-header">
+      <span class="portfolio-modal-eyebrow">Selected Work</span>
       <h2>作品集</h2>
+      <p>這裡收錄了一些我做過的專案，有些可以線上瀏覽，有些提供下載使用，也有些目前僅供展示。</p>
     </div>
     <div class="portfolio-grid" id="portfolio-grid">
       <!-- 作品卡片會由下方 JS 自動產生 -->
@@ -979,22 +1051,39 @@
 </div>
 
 <script>
+  // ============================================
+  // 在這裡編輯你的作品資料即可，卡片會自動產生
+  // type: "url" 表示連結可直接瀏覽；"download" 表示提供下載
+  // ============================================
   const portfolioItems = [
     {
-      image: "./images/ai.png",
+      image: "./works/ai.png",
       title: "Panasonic 冷氣維修專業顧問",
       description: "Panasonic空調線上維修AI機器人",
       link: "https://panasonic-ai-a5365.web.app",
       type: "url"
     },
     {
-      image: "./images/linebot.png",
+      image: "./works/linebot.png",
       title: "linebot備份機器人",
       description: "LINE 備份機器人，可備份所有對話內容及圖片、檔案，並支援後台自動回覆設定，也可撰寫自動回覆模組。",
-      link: "",
-      type: "download"
+      type: "none"
+    },
+    {
+      image: "./works/hvactool.png",
+      title: "Panasonic HVAC 工具箱",
+      description: "整合所有Panasonic空調維修常用工具",
+      link: "https://kcpdeep.alwaysdata.net/",
+      type: "url"
     }
   ];
+
+  // type 對照：
+  //   "url"      -> 藍色標籤「線上瀏覽」，按鈕開新分頁前往 link
+  //   "download" -> 綠色標籤「可下載」，按鈕觸發下載 link
+  //   "none"     -> 灰色標籤「僅供展示」，不放按鈕，只顯示一行說明文字（可不填 link）
+  const TAG_LABEL = { url: '線上瀏覽', download: '可下載', none: '僅供展示' };
+  const ACTION_LABEL = { url: '前往查看 ↗', download: '下載作品 ⬇' };
 
   function renderPortfolio() {
     const grid = document.getElementById('portfolio-grid');
@@ -1006,18 +1095,30 @@
     }
 
     portfolioItems.forEach(item => {
-      const isDownload = item.type === 'download';
+      const type = (item.type === 'download' || item.type === 'url') ? item.type : 'none';
+      const isStatic = type === 'none';
+
       const card = document.createElement('div');
-      card.className = 'portfolio-card';
+      card.className = 'portfolio-card' + (isStatic ? ' is-static' : '');
+
+      const actionHtml = isStatic
+        ? `<span class="portfolio-card-action is-static">尚未公開連結</span>`
+        : `<a class="portfolio-card-action" href="${item.link}" ${type === 'download' ? 'download' : 'target="_blank" rel="noopener"'}>${ACTION_LABEL[type]}</a>`;
+
       card.innerHTML = `
-        <img class="portfolio-card-image" src="${item.image}" alt="${item.title}" loading="lazy">
+        <div class="portfolio-card-shot">
+          <div class="portfolio-card-browserbar">
+            <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+          </div>
+          <div class="portfolio-card-image-wrap">
+            <img class="portfolio-card-image" src="${item.image}" alt="${item.title}" loading="lazy">
+          </div>
+        </div>
         <div class="portfolio-card-body">
-          <span class="portfolio-card-tag ${isDownload ? 'tag-download' : 'tag-url'}">${isDownload ? '可下載' : '線上瀏覽'}</span>
+          <span class="portfolio-card-tag tag-${type}">${TAG_LABEL[type]}</span>
           <div class="portfolio-card-title">${item.title}</div>
           <p class="portfolio-card-desc">${item.description}</p>
-          <a class="portfolio-card-action" href="${item.link}" ${isDownload ? 'download' : 'target="_blank" rel="noopener"'}>
-            ${isDownload ? '下載作品 ⬇' : '前往查看 ↗'}
-          </a>
+          ${actionHtml}
         </div>
       `;
       grid.appendChild(card);
