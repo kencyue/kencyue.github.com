@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>實戰課程 | 職場外掛工程學</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0f172a;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --bg-light: #f8fafc;
+    --text-main: #334155;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { color: var(--text-dark); font-weight: 700; margin-top: 0; line-height: 1.3; word-break: keep-all; }
+  p { margin-bottom: 1.2rem; }
+  a { text-decoration: none; transition: 0.2s; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px;
+  }
+  .back-link:hover { color: var(--accent); }
+  .badge {
+    display: inline-block; padding: 8px 24px; background: rgba(255,255,255,0.1);
+    color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 99px;
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  /* Hero */
+  .hero {
+    padding: 100px 0 80px; text-align: center; color: #ffffff;
+    background: var(--primary);
+  }
+  .hero h1 { color: #fff; font-size: clamp(1.8rem, 5vw, 3rem); letter-spacing: -0.02em; margin-bottom: 20px; }
+  .hero p.subtitle { font-size: 1.15rem; color: rgba(255,255,255,0.8); max-width: 640px; margin: 0 auto 36px; font-weight: 300; }
+  .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; justify-content: center; align-items: center;
+    padding: 14px 32px; border-radius: 99px; font-weight: 600; font-size: 1rem;
+    transition: all 0.2s; text-decoration: none;
+  }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 12px rgba(59,130,246,0.35); }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
+  .btn-outline:hover { border-color: #fff; }
+  /* Why 1-on-1 */
+  .why-section { padding: 90px 0; background: #fff; }
+  .section-header { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+  .section-header h2 { font-size: 1.9rem; margin-bottom: 12px; }
+  .section-header p { color: var(--text-muted); margin: 0; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+  .feature-card {
+    background: var(--bg-light); padding: 32px; border-radius: 18px; border: 1px solid var(--border);
+  }
+  .feature-icon {
+    width: 40px; height: 40px; background: #eff6ff; color: var(--accent); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    margin-bottom: 18px; font-weight: bold;
+  }
+  .feature-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+  .feature-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+  /* Levels */
+  .levels-section { padding: 90px 0; background: var(--bg-light); }
+  .level-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .level-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 28px;
+    display: flex; flex-direction: column;
+  }
+  .level-tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--accent); background: #eff6ff;
+    padding: 4px 12px; border-radius: 99px; margin-bottom: 14px; width: fit-content;
+  }
+  .level-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .level-card .level-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px; }
+  .level-card .level-output {
+    margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--border);
+    font-size: 0.88rem; font-weight: 600; color: var(--text-dark);
+  }
+  /* Process */
+  .process-section { padding: 90px 0; background: #fff; }
+  .process-list { max-width: 760px; margin: 0 auto; border-left: 2px solid var(--border); padding-left: 32px; }
+  .process-item { position: relative; margin-bottom: 40px; }
+  .process-item:last-child { margin-bottom: 0; }
+  .process-marker {
+    position: absolute; left: -41px; top: 2px; width: 16px; height: 16px;
+    background: #fff; border: 2px solid var(--accent); border-radius: 50%;
+  }
+  .process-step-num { color: var(--accent); font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 4px; }
+  .process-item h3 { font-size: 1.15rem; margin-bottom: 6px; }
+  .process-item p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+  /* Pricing */
+  .pricing-section { padding: 90px 0; background: var(--bg-light); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto; }
+  .pricing-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 36px 28px;
+    display: flex; flex-direction: column; box-shadow: var(--card-shadow);
+  }
+  .pricing-card.featured { border: 2px solid var(--accent); position: relative; }
+  .pricing-featured-tag {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 700;
+    padding: 4px 16px; border-radius: 99px; letter-spacing: 0.03em;
+  }
+  .pricing-name { font-size: 1.2rem; margin-bottom: 6px; }
+  .pricing-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px; }
+  .pricing-price { font-size: 1.6rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+  .pricing-unit { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px; }
+  .pricing-features { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; }
+  .pricing-features li {
+    font-size: 0.9rem; color: var(--text-main); padding: 8px 0 8px 22px;
+    position: relative; border-top: 1px solid var(--border);
+  }
+  .pricing-features li:first-child { border-top: none; }
+  .pricing-features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .pricing-note {
+    text-align: center; color: var(--text-muted); font-size: 0.88rem; max-width: 560px;
+    margin: 40px auto 0; padding-top: 24px; border-top: 1px dashed var(--border);
+  }
+  /* FAQ */
+  .faq-section { padding: 90px 0; background: #fff; }
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+  .faq-item h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .faq-item p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+  /* Final CTA */
+  .final-cta { padding: 100px 0; text-align: center; background: var(--primary); color: #fff; }
+  .final-cta h2 { color: #fff; font-size: 2rem; margin-bottom: 16px; }
+  .final-cta p { color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 36px; }
+  footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; background: #fff; border-top: 1px solid var(--border); }
+  @media (max-width: 700px) {
+    .hero { padding: 72px 0 56px; }
+    .why-section, .levels-section, .process-section, .pricing-section, .faq-section, .final-cta { padding: 64px 0; }
+  }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="container">
+    <a href="index.html" class="back-link" style="color: rgba(255,255,255,0.6);">← 回首頁</a>
+    <div><span class="badge">1 對 1 實戰教學</span></div>
+    <h1>職場外掛工程學 實戰班</h1>
+    <p class="subtitle">不是罐頭課程。我們用你工作中真正卡住的那個問題當教材，一步步帶你做出一個自己能用的外掛。</p>
+    <div class="hero-ctas">
+      <a href="mailto:your@email.com?subject=預約診斷場&body=您好，我想預約診斷場：%0D%0A%0D%0A1. 目前卡住的工作流程：%0D%0A2. 大概的程式基礎：%0D%0A3. 方便的時間：" class="btn btn-primary">預約診斷場</a>
+      <a href="#pricing" class="btn btn-outline">查看方案與定價</a>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>為什麼是 1 對 1，不是罐頭課程</h2>
+      <p>每個人卡住的地方不一樣，教材當然也不該一樣。</p>
+    </div>
+    <div class="grid-3">
+      <div class="feature-card">
+        <div class="feature-icon">◆</div>
+        <h3>你的問題，就是教材</h3>
+        <p>不是照著固定課綱上課，而是把你實際卡住的工作流程，拆解成一堂一堂的教學內容。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">◆</div>
+        <h3>AI 協作實戰</h3>
+        <p>不只是教語法，是教你怎麼跟 AI 一起把一個模糊的想法，變成一支能跑的程式。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">◆</div>
+        <h3>結束時，工具留在你手上</h3>
+        <p>課程的產出不是筆記，是一個真的能在你工作裡使用的外掛，附上你看得懂的維護說明。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="levels-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>依你的起點，設計不同路線</h2>
+      <p>診斷場會先確認你落在哪一級，再決定教學節奏與堂數。</p>
+    </div>
+    <div class="level-grid">
+      <div class="level-card">
+        <span class="level-tag">完全新手</span>
+        <h3>辦公室工作者</h3>
+        <p class="level-desc">沒寫過程式，但每天都在跟系統限制搏鬥。用 AI 當共同駕駛，從最小的自動化開始。</p>
+        <div class="level-output">產出範例：像 Outlook 排程自動同步這種「先求有」的小工具</div>
+      </div>
+      <div class="level-card">
+        <span class="level-tag">基礎邏輯</span>
+        <h3>會 Excel VBA</h3>
+        <p class="level-desc">把你熟悉的 Excel 思維，搬到瀏覽器端。學會抓資料、存資料、跑流程。</p>
+        <div class="level-output">產出範例：ERP 報表自動化，把 3 小時作業變 3 分鐘</div>
+      </div>
+      <div class="level-card">
+        <span class="level-tag">進階</span>
+        <h3>有基礎 JS / HTML</h3>
+        <p class="level-desc">學 Userscript、跨 frame 通訊、IndexedDB 這類實戰技巧，處理更複雜的老舊系統。</p>
+        <div class="level-output">產出範例：不動系統一行程式碼的查詢工具</div>
+      </div>
+      <div class="level-card">
+        <span class="level-tag">工程師</span>
+        <h3>想學外掛思維</h3>
+        <p class="level-desc">不教語法，教「問題優先」的判斷力，和跟 AI 協作的節奏與框架。</p>
+        <div class="level-output">產出範例：把你自己手上的專案，重新用外掛思維拆解一次</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>上課怎麼進行</h2>
+      <p>四個步驟，從卡住到有一個真的能用的東西。</p>
+    </div>
+    <div class="process-list">
+      <div class="process-item">
+        <div class="process-marker"></div>
+        <span class="process-step-num">STEP 1</span>
+        <h3>診斷場</h3>
+        <p>約 60 分鐘，釐清你卡住的工作流程、目前的程式基礎，一起定案要走哪條路線。</p>
+      </div>
+      <div class="process-item">
+        <div class="process-marker"></div>
+        <span class="process-step-num">STEP 2</span>
+        <h3>規劃教學節奏</h3>
+        <p>依你的程度，把要做的工具拆成幾堂課，每堂課都對應一個可以驗收的小成果。</p>
+      </div>
+      <div class="process-item">
+        <div class="process-marker"></div>
+        <span class="process-step-num">STEP 3</span>
+        <h3>逐堂實作</h3>
+        <p>每堂課帶你動手寫、動手改，AI 全程輔助，卡住的地方當場拆解。</p>
+      </div>
+      <div class="process-item">
+        <div class="process-marker"></div>
+        <span class="process-step-num">STEP 4</span>
+        <h3>交付</h3>
+        <p>課程結束，工具留在你手上，附上你看得懂的維護說明，之後遇到小問題也知道怎麼改。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2>方案與定價</h2>
+      <p>1 對 1 客製教學，時數與內容依你的程度調整。</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">診斷場</div>
+        <div class="pricing-desc">確認問題、程度與路線</div>
+        <div class="pricing-price">NT$1,200</div>
+        <div class="pricing-unit">約 60 分鐘</div>
+        <ul class="pricing-features">
+          <li>釐清實際卡住的工作流程</li>
+          <li>評估目前程式基礎</li>
+          <li>建議適合的路線與堂數</li>
+        </ul>
+        <a href="mailto:your@email.com?subject=預約診斷場" class="btn btn-outline" style="color: var(--accent); border-color: var(--accent);">預約診斷場</a>
+      </div>
+      <div class="pricing-card featured">
+        <span class="pricing-featured-tag">最多人選</span>
+        <div class="pricing-name">標準班</div>
+        <div class="pricing-desc">適合新手到 VBA 程度</div>
+        <div class="pricing-price">NT$18,000–24,000</div>
+        <div class="pricing-unit">6 堂 × 1.5 小時</div>
+        <ul class="pricing-features">
+          <li>從診斷結果直接展開課程</li>
+          <li>每堂課都有可驗收的小成果</li>
+          <li>做出第一個完整外掛</li>
+        </ul>
+        <a href="mailto:your@email.com?subject=詢問標準班" class="btn btn-primary">詢問標準班</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">深度陪跑班</div>
+        <div class="pricing-desc">適合有基礎、想做更多</div>
+        <div class="pricing-price">NT$36,000–48,000</div>
+        <div class="pricing-unit">10–12 堂</div>
+        <ul class="pricing-features">
+          <li>做出 2–3 個工具</li>
+          <li>逐堂 code review</li>
+          <li>涵蓋跨系統整合等進階主題</li>
+        </ul>
+        <a href="mailto:your@email.com?subject=詢問深度陪跑班" class="btn btn-outline" style="color: var(--accent); border-color: var(--accent);">詢問深度陪跑班</a>
+      </div>
+    </div>
+    <p class="pricing-note">診斷場費用可全額折抵後續任一方案。實際堂數與價格會依診斷結果微調，診斷場結束後才會定案。</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>常見問題</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>我完全不會寫程式，可以上這個課嗎？</h3>
+        <p>可以。診斷場就是用來確認你的起點，完全新手會走最基礎的路線，用 AI 當共同駕駛從最小的自動化開始。</p>
+      </div>
+      <div class="faq-item">
+        <h3>上課方式是線上還是實體？</h3>
+        <p>以線上視訊為主，搭配螢幕共享實作，時間安排相對彈性，適合上班族利用下班時間進行。</p>
+      </div>
+      <div class="faq-item">
+        <h3>做出來的工具算誰的？</h3>
+        <p>工具是為了解決你自己的工作痛點而做，課程結束後完全屬於你，用於個人工作範圍沒有問題。</p>
+      </div>
+      <div class="faq-item">
+        <h3>如果堂數上完了，工具還沒做完怎麼辦？</h3>
+        <p>規劃教學節奏時會先評估堂數是否足夠，若中途發現範圍需要調整，會提前討論加購堂數或縮小範圍，不會讓你卡在做一半。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>先花 60 分鐘，把問題講清楚</h2>
+    <p>診斷場不是銷售話術，是真的要搞懂你卡在哪裡，才能決定怎麼教。</p>
+    <a href="mailto:your@email.com?subject=預約診斷場&body=您好，我想預約診斷場：%0D%0A%0D%0A1. 目前卡住的工作流程：%0D%0A2. 大概的程式基礎：%0D%0A3. 方便的時間：" class="btn btn-primary">預約診斷場</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="index.html" style="color: var(--text-muted);">← 回首頁</a> · © 2026 Workplace Plugin Engineering
+  </div>
+</footer>
+</body>
+</html>
