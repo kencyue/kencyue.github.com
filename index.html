@@ -288,6 +288,7 @@
     transition: 0.2s;
     text-decoration: none;
     font-weight: 500;
+    cursor: pointer;
   }
 
   .profile-link:hover {
@@ -523,6 +524,194 @@
     border-top: 1px solid var(--border);
   }
 
+  /* ============================= */
+  /* Portfolio Showcase Modal      */
+  /* ============================= */
+
+  .portfolio-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    padding: 40px 20px;
+    overflow-y: auto;
+  }
+
+  .portfolio-modal-overlay.open {
+    display: block;
+    animation: fadeIn 0.25s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .portfolio-modal {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 48px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.3s ease;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .portfolio-modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+  }
+
+  .portfolio-modal-close:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    transform: rotate(90deg);
+  }
+
+  .portfolio-modal-header {
+    margin-bottom: 40px;
+    padding-right: 40px;
+  }
+
+  .portfolio-modal-header h2 {
+    font-size: 1.9rem;
+    margin-bottom: 8px;
+  }
+
+  .portfolio-modal-header p {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+  }
+
+  .portfolio-card {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow);
+    border-color: var(--accent);
+  }
+
+  .portfolio-card-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: var(--bg-light);
+    display: block;
+  }
+
+  .portfolio-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .portfolio-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .portfolio-card-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0 0 20px;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .portfolio-card-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 0;
+    border-radius: 99px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
+  }
+
+  .portfolio-card-action:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .portfolio-card-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 99px;
+    margin-bottom: 10px;
+    width: fit-content;
+  }
+
+  .portfolio-card-tag.tag-url {
+    background: #eff6ff;
+    color: var(--accent);
+  }
+
+  .portfolio-card-tag.tag-download {
+    background: #f0fdf4;
+    color: #16a34a;
+  }
+
+  .portfolio-empty {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 60px 20px;
+  }
+
+  @media (max-width: 600px) {
+    .portfolio-modal { padding: 32px 24px; border-radius: 18px; }
+    .portfolio-modal-header h2 { font-size: 1.5rem; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+  }
+
   /* RWD */
   @media (max-width: 900px) {
     .hero {
@@ -647,7 +836,7 @@
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                     <span>GitHub</span>
                 </a>
-                <a href="#" class="profile-link" title="作品集">
+                <a href="javascript:void(0)" class="profile-link" title="作品集" id="portfolio-btn">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
                     <span>作品集</span>
                 </a>
@@ -773,6 +962,89 @@
     © 2026 Workplace Plugin Engineering
   </div>
 </footer>
+
+<!-- ============================= -->
+<!-- Portfolio Showcase Modal      -->
+<!-- ============================= -->
+<div class="portfolio-modal-overlay" id="portfolio-overlay">
+  <div class="portfolio-modal">
+    <button class="portfolio-modal-close" id="portfolio-close" aria-label="關閉">&times;</button>
+    <div class="portfolio-modal-header">
+      <h2>作品集</h2>
+    </div>
+    <div class="portfolio-grid" id="portfolio-grid">
+      <!-- 作品卡片會由下方 JS 自動產生 -->
+    </div>
+  </div>
+</div>
+
+<script>
+  const portfolioItems = [
+    {
+      image: "./images/ai.png",
+      title: "Panasonic 冷氣維修專業顧問",
+      description: "Panasonic空調線上維修AI機器人",
+      link: "https://panasonic-ai-a5365.web.app",
+      type: "url"
+    },
+    {
+      image: "./images/linebot.png",
+      title: "linebot備份機器人",
+      description: "LINE 備份機器人，可備份所有對話內容及圖片、檔案，並支援後台自動回覆設定，也可撰寫自動回覆模組。",
+      link: "",
+      type: "download"
+    }
+  ];
+
+  function renderPortfolio() {
+    const grid = document.getElementById('portfolio-grid');
+    grid.innerHTML = '';
+
+    if (!portfolioItems.length) {
+      grid.innerHTML = '<div class="portfolio-empty">目前尚未新增作品，敬請期待。</div>';
+      return;
+    }
+
+    portfolioItems.forEach(item => {
+      const isDownload = item.type === 'download';
+      const card = document.createElement('div');
+      card.className = 'portfolio-card';
+      card.innerHTML = `
+        <img class="portfolio-card-image" src="${item.image}" alt="${item.title}" loading="lazy">
+        <div class="portfolio-card-body">
+          <span class="portfolio-card-tag ${isDownload ? 'tag-download' : 'tag-url'}">${isDownload ? '可下載' : '線上瀏覽'}</span>
+          <div class="portfolio-card-title">${item.title}</div>
+          <p class="portfolio-card-desc">${item.description}</p>
+          <a class="portfolio-card-action" href="${item.link}" ${isDownload ? 'download' : 'target="_blank" rel="noopener"'}>
+            ${isDownload ? '下載作品 ⬇' : '前往查看 ↗'}
+          </a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function openPortfolioModal() {
+    document.getElementById('portfolio-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePortfolioModal() {
+    document.getElementById('portfolio-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('portfolio-btn').addEventListener('click', openPortfolioModal);
+  document.getElementById('portfolio-close').addEventListener('click', closePortfolioModal);
+  document.getElementById('portfolio-overlay').addEventListener('click', function (e) {
+    if (e.target === this) closePortfolioModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closePortfolioModal();
+  });
+
+  renderPortfolio();
+</script>
 
 </body>
 </html>
