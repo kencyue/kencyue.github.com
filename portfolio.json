@@ -56,9 +56,41 @@
     "category": "企業自動化 / 系統整合"
   },
   {
+    "image": "./works/quizbank.png",
+    "title": "題庫管理系統",
+    "description": "內部教育訓練用的題庫建置與管理平台，支援題目分類與測驗產出。",
+    "link": "",
+    "type": "none",
+    "category": "企業自動化 / 系統整合"
+  },
+  {
     "image": "./works/torrent.jpg",
     "title": "Simple Torrent",
     "description": "一個沒有廣告、沒有內建追蹤的簡易 BitTorrent 下載 app。",
+    "link": "",
+    "type": "none",
+    "category": "個人專案"
+  },
+  {
+    "image": "./works/pointsystem.png",
+    "title": "親子點數管理系統",
+    "description": "親子共用的點數系統，結合遊戲化的任務完成機制，每個孩子還有專屬的介面配色。",
+    "link": "",
+    "type": "none",
+    "category": "個人專案"
+  },
+  {
+    "image": "./works/screentime.png",
+    "title": "電腦使用時間管理系統",
+    "description": "監控與限制電腦使用時間，協助建立良好的使用習慣。",
+    "link": "",
+    "type": "none",
+    "category": "個人專案"
+  },
+  {
+    "image": "./works/survey.png",
+    "title": "問卷系統",
+    "description": "自建的輕量問卷產出與回收工具，可自訂題型與統計結果。",
     "link": "",
     "type": "none",
     "category": "個人專案"
