@@ -1042,7 +1042,7 @@
     <div class="portfolio-modal-header">
       <span class="portfolio-modal-eyebrow">Selected Work</span>
       <h2>作品集</h2>
-      <p>這裡收錄了一些我做過的專案，有些可以線上瀏覽，有些提供下載使用，也有些目前僅供展示。</p>
+      <p>這裡收錄了我過往的一些專案，部分可線上瀏覽或下載體驗，部分僅為概念展示。如需進一步了解，歡迎與我聯繫。</p>
     </div>
     <div class="portfolio-grid" id="portfolio-grid">
       <!-- 作品卡片會由下方 JS 自動產生 -->
@@ -1108,7 +1108,7 @@
       card.className = 'portfolio-card' + (isStatic ? ' is-static' : '');
 
       const actionHtml = isStatic
-        ? `<span class="portfolio-card-action is-static">尚未公開連結</span>`
+        ? `<span class="portfolio-card-action is-static">僅提供說明展示</span>`
         : `<a class="portfolio-card-action" href="${item.link}" ${type === 'download' ? 'download' : 'target="_blank" rel="noopener"'}>${ACTION_LABEL[type]}</a>`;
 
       card.innerHTML = `
