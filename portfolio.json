@@ -1,0 +1,28 @@
+[
+  {
+    "image": "./works/ai.png",
+    "title": "Panasonic 冷氣維修專業顧問",
+    "description": "Panasonic空調線上維修AI機器人",
+    "link": "https://panasonic-ai-a5365.web.app",
+    "type": "url"
+  },
+  {
+    "image": "./works/hvactool.png",
+    "title": "Panasonic HVAC 工具箱",
+    "description": "整合所有Panasonic空調維修常用工具",
+    "link": "https://kcpdeep.alwaysdata.net/",
+    "type": "url"
+  },
+  {
+    "image": "./works/linebot.png",
+    "title": "Linebot備份機器人",
+    "description": "可備份所有LINE對話內容及圖片、檔案，並支援後台自動回覆設定，也可撰寫自動回覆模組。",
+    "type": "none"
+  },
+  {
+    "image": "./works/LineChatAnalyzer.png",
+    "title": "Line對話紀錄分析器",
+    "description": "可分析LINE對話記錄做主題性分析，也可客製生成企業內部報表。",
+    "type": "none"
+  }
+]
