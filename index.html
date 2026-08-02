@@ -21,9 +21,7 @@
     --border: #e2e8f0;
     --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   }
-
   * { box-sizing: border-box; }
-
   body {
     margin: 0;
     font-family: 'Inter', 'Noto Sans TC', sans-serif;
@@ -32,7 +30,6 @@
     background: #ffffff;
     -webkit-font-smoothing: antialiased;
   }
-
   h1, h2, h3, h4 {
     color: var(--text-dark);
     font-weight: 700;
@@ -40,10 +37,8 @@
     line-height: 1.3;
     word-break: keep-all; 
   }
-
   p { margin-bottom: 1.2rem; }
   a { text-decoration: none; transition: 0.3s; }
-
   /* Layout */
   .container {
     max-width: 1100px;
@@ -66,7 +61,6 @@
     text-transform: uppercase;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
-
   /* Hero Section */
   .hero {
     position: relative;
@@ -78,7 +72,6 @@
     background-size: cover;
     background-position: center;
   }
-
   .hero::before {
     content: '';
     position: absolute;
@@ -86,12 +79,10 @@
     background: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
     z-index: 1;
   }
-
   .hero .container {
     position: relative;
     z-index: 2;
   }
-
   .hero h1 {
     color: #ffffff;
     font-size: clamp(2rem, 5vw, 4rem);
@@ -100,7 +91,6 @@
     white-space: nowrap;
     text-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
-
   .hero p.subtitle {
     font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.85);
@@ -108,28 +98,23 @@
     margin: 0 auto 40px;
     font-weight: 300;
   }
-
   /* Pain Points */
   .pain-points {
     padding: 80px 0;
     background: #fff;
     border-bottom: 1px solid var(--border);
   }
-
   .pain-header {
     text-align: center;
     max-width: 760px;
     margin: 0 auto 60px;
   }
-
   .pain-header h2 { font-size: 2rem; margin-bottom: 16px; }
-
   .pain-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
   }
-
   .pain-card {
     background: #fff5f5;
     padding: 40px 32px;
@@ -142,7 +127,6 @@
   .pain-card:hover {
     transform: translateY(-5px);
   }
-
   .pain-card h3 {
     color: #9b2c2c;
     margin-bottom: 16px;
@@ -159,7 +143,6 @@
   }
   
   .pain-card p { color: #4a5568; margin: 0; font-size: 1rem; }
-
   .transition-text {
     text-align: center;
     margin-top: 60px;
@@ -167,19 +150,16 @@
     font-weight: 600;
     color: var(--text-dark);
   }
-
   /* Philosophy */
   .philosophy {
     padding: 100px 0;
     background: var(--bg-light);
   }
-
   .grid-3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
   }
-
   .feature-card {
     background: #ffffff;
     padding: 32px;
@@ -193,7 +173,6 @@
     transform: translateY(-5px);
     border-color: var(--accent);
   }
-
   .feature-icon {
     width: 40px;
     height: 40px;
@@ -207,7 +186,6 @@
     margin-bottom: 20px;
     font-weight: bold;
   }
-
   .philosophy-quote {
     margin-top: 48px;
     background: #ffffff;
@@ -223,14 +201,12 @@
     margin-bottom: 12px;
     font-size: 1.4rem;
   }
-
   .philosophy-quote p {
     margin: 0;
     color: var(--text-dark);
     font-weight: 500;
     font-size: 1.15rem;
   }
-
   /* Bio Section */
   .bio-section {
     padding: 100px 0;
@@ -238,14 +214,12 @@
     color: var(--text-light);
     overflow: hidden;
   }
-
   .bio-layout {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 60px;
     align-items: start;
   }
-
   .profile-card {
     position: sticky;
     top: 40px;
@@ -256,7 +230,6 @@
     border-radius: 24px;
     text-align: center;
   }
-
   .avatar {
     width: 140px;
     height: 140px;
@@ -265,7 +238,6 @@
     border: 4px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 20px;
   }
-
   /* Social Links for Profile */
   .profile-links {
     display: flex;
@@ -290,7 +262,6 @@
     font-weight: 500;
     cursor: pointer;
   }
-
   .profile-link:hover {
     background: rgba(255, 255, 255, 0.2);
     color: #fff;
@@ -303,13 +274,11 @@
     height: 18px;
     fill: currentColor;
   }
-
   .timeline {
     border-left: 2px solid rgba(255, 255, 255, 0.1);
     padding-left: 30px;
     margin-top: 30px;
   }
-
   .timeline-item { position: relative; margin-bottom: 40px; }
   .timeline-marker {
     position: absolute;
@@ -319,7 +288,6 @@
     border: 2px solid var(--accent);
     border-radius: 50%;
   }
-
   .timeline-year {
     color: var(--accent);
     font-weight: bold;
@@ -327,10 +295,8 @@
     margin-bottom: 4px;
     display: block;
   }
-
   .timeline-title { color: #ffffff; font-size: 1.25rem; margin-bottom: 8px; }
   .timeline-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); margin: 0; }
-
   /* Stack Section - Bubbles Edition */
   .stack-section {
     padding: 100px 0;
@@ -342,13 +308,11 @@
     max-width: 900px;
     margin: 0 auto;
   }
-
   .stack-container h2 {
     font-size: 2.5rem;
     margin-bottom: 24px;
     color: var(--text-dark);
   }
-
   .bubble-container {
     display: flex;
     flex-wrap: wrap;
@@ -356,7 +320,6 @@
     gap: 16px;
     margin-top: 48px;
   }
-
   .bubble {
     display: inline-flex;
     align-items: center;
@@ -372,7 +335,6 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     cursor: default;
   }
-
   .bubble:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 20px -8px rgba(59, 130, 246, 0.3);
@@ -380,7 +342,6 @@
     color: var(--accent);
     background: #fff;
   }
-
   .bubble.highlight {
     background: #eff6ff;
     color: var(--accent);
@@ -393,28 +354,23 @@
     color: #ffffff;
     box-shadow: 0 12px 20px -8px rgba(37, 99, 235, 0.4);
   }
-
   /* CTA */
   .cta {
     padding: 100px 0;
     text-align: center;
     background: var(--bg-light);
   }
-
   /* Dual Service CTA Section (Updated) */
   .services-section {
     padding: 100px 0;
     background: var(--bg-light);
     border-top: 1px solid var(--border);
   }
-
   .services-header {
     text-align: center;
     margin-bottom: 60px;
   }
-
   .services-header h2 { font-size: 2.2rem; margin-bottom: 16px; }
-
   .services-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -422,7 +378,6 @@
     max-width: 960px;
     margin: 0 auto;
   }
-
   .service-card {
     background: #ffffff;
     padding: 48px 32px;
@@ -436,31 +391,26 @@
     justify-content: space-between;
     align-items: center; /* FORCE CENTER ALIGNMENT FLEX ITEMS */
   }
-
   .service-card:hover {
     transform: translateY(-8px);
     border-color: var(--accent);
   }
-
   .service-icon {
     font-size: 3rem;
     margin-bottom: 24px;
     display: inline-block;
   }
-
   .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 16px;
     color: var(--text-dark);
   }
-
   .service-card p {
     color: var(--text-muted);
     margin-bottom: 32px;
     font-size: 1rem;
     line-height: 1.6;
   }
-
   /* Button Updated to Force Center */
   .btn {
     display: inline-flex; /* Use flexbox for button content */
@@ -475,7 +425,6 @@
     width: 100%;
     text-align: center; /* Fallback */
   }
-
   /* Primary Button (Course) */
   .btn-primary {
     background: var(--accent);
@@ -486,7 +435,6 @@
     background: var(--accent-hover);
     transform: translateY(-2px);
   }
-
   /* Outline Button (Service) */
   .btn-outline {
     background: transparent;
@@ -498,7 +446,6 @@
     color: #ffffff;
     transform: translateY(-2px);
   }
-
   /* Service Link Styles */
   .service-link {
     display: inline-block;
@@ -514,7 +461,6 @@
     color: var(--accent);
     border-bottom-color: var(--accent);
   }
-
   footer {
     padding: 40px 0;
     text-align: center; /* Center Footer */
@@ -523,11 +469,9 @@
     background: #ffffff;
     border-top: 1px solid var(--border);
   }
-
   /* ============================= */
   /* Portfolio Showcase Modal      */
   /* ============================= */
-
   .portfolio-modal-overlay {
     display: none;
     position: fixed;
@@ -538,17 +482,14 @@
     padding: 40px 20px;
     overflow-y: auto;
   }
-
   .portfolio-modal-overlay.open {
     display: block;
     animation: fadeIn 0.25s ease;
   }
-
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
   }
-
   .portfolio-modal {
     max-width: 1000px;
     margin: 0 auto;
@@ -559,12 +500,10 @@
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
     animation: slideUp 0.3s ease;
   }
-
   @keyframes slideUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
   .portfolio-modal-close {
     position: absolute;
     top: 24px;
@@ -583,19 +522,16 @@
     justify-content: center;
     transition: 0.2s;
   }
-
   .portfolio-modal-close:hover {
     background: var(--accent);
     color: #fff;
     border-color: var(--accent);
     transform: rotate(90deg);
   }
-
   .portfolio-modal-header {
     margin-bottom: 40px;
     padding-right: 40px;
   }
-
   .portfolio-modal-eyebrow {
     display: inline-block;
     font-size: 0.75rem;
@@ -605,23 +541,19 @@
     color: var(--accent);
     margin-bottom: 10px;
   }
-
   .portfolio-modal-header h2 {
     font-size: 1.9rem;
     margin-bottom: 8px;
   }
-
   .portfolio-modal-header p {
     color: var(--text-muted);
     margin: 0;
   }
-
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 28px;
   }
-
   .portfolio-card {
     border: 1px solid var(--border);
     border-radius: 16px;
@@ -631,51 +563,43 @@
     background: #fff;
     transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
   }
-
   .portfolio-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--card-shadow);
     border-color: var(--accent);
   }
-
   .portfolio-card.is-static:hover {
     transform: none;
     box-shadow: none;
     border-color: var(--border);
   }
-
   /* Screenshot shown inside a lightweight "browser window" frame so raw
      app/UI screenshots feel like a curated shot instead of a random crop. */
   .portfolio-card-shot {
     background: #e7ebf1;
     padding: 14px 14px 0;
   }
-
   .portfolio-card-browserbar {
     display: flex;
     align-items: center;
     gap: 6px;
     padding: 0 2px 10px;
   }
-
   .portfolio-card-browserbar .dot {
     width: 9px;
     height: 9px;
     border-radius: 50%;
     display: inline-block;
   }
-
   .portfolio-card-browserbar .dot-red { background: #f47067; }
   .portfolio-card-browserbar .dot-yellow { background: #f5bd4f; }
   .portfolio-card-browserbar .dot-green { background: #62c554; }
-
   .portfolio-card-image-wrap {
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     background: #fff;
     box-shadow: 0 -1px 0 rgba(15, 23, 42, 0.04) inset;
   }
-
   .portfolio-card-image {
     width: 100%;
     aspect-ratio: 16 / 10;
@@ -684,21 +608,18 @@
     background: #fff;
     display: block;
   }
-
   .portfolio-card-body {
     padding: 20px;
     display: flex;
     flex-direction: column;
     flex: 1;
   }
-
   .portfolio-card-title {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 8px;
   }
-
   .portfolio-card-desc {
     font-size: 0.9rem;
     color: var(--text-muted);
@@ -706,7 +627,6 @@
     line-height: 1.6;
     flex: 1;
   }
-
   .portfolio-card-action {
     display: inline-flex;
     align-items: center;
@@ -721,12 +641,10 @@
     border: 1.5px solid var(--accent);
     color: var(--accent);
   }
-
   .portfolio-card-action:hover {
     background: var(--accent);
     color: #fff;
   }
-
   /* Static state: no url/download available, so it's plain text, not a button */
   .portfolio-card-action.is-static {
     border-color: transparent;
@@ -735,12 +653,10 @@
     cursor: default;
     font-weight: 500;
   }
-
   .portfolio-card-action.is-static:hover {
     background: var(--bg-light);
     color: var(--text-muted);
   }
-
   .portfolio-card-tag {
     display: inline-flex;
     align-items: center;
@@ -754,34 +670,38 @@
     margin-bottom: 10px;
     width: fit-content;
   }
-
   .portfolio-card-tag.tag-url {
     background: #eff6ff;
     color: var(--accent);
   }
-
   .portfolio-card-tag.tag-download {
     background: #f0fdf4;
     color: #16a34a;
   }
-
   .portfolio-card-tag.tag-none {
     background: var(--bg-light);
     color: var(--text-muted);
   }
-
   .portfolio-empty {
     text-align: center;
     color: var(--text-muted);
     padding: 60px 20px;
   }
-
+  .portfolio-error {
+    text-align: center;
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 24px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
   @media (max-width: 600px) {
     .portfolio-modal { padding: 32px 24px; border-radius: 18px; }
     .portfolio-modal-header h2 { font-size: 1.5rem; }
     .portfolio-grid { grid-template-columns: 1fr; }
   }
-
   /* RWD */
   @media (max-width: 900px) {
     .hero {
@@ -797,7 +717,6 @@
     .stack-container h2 { font-size: 2rem; }
     .bubble { font-size: 0.95rem; padding: 10px 20px; }
   }
-
   @media (max-width: 600px) {
     .hero { padding: 120px 0 80px; }
     .profile-card { display: block; text-align: center; }
@@ -809,7 +728,6 @@
 </style>
 </head>
 <body>
-
 <section class="hero">
   <div class="container">
     <span class="badge">Workplace Plugin Engineering</span>
@@ -821,7 +739,6 @@
     <a href="#intro" style="color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.3); font-size: 0.9rem;">探索更多 ↓</a>
   </div>
 </section>
-
 <!-- Pain Points -->
 <section class="pain-points" id="intro">
   <div class="container">
@@ -829,7 +746,6 @@
       <h2>你是否也覺得，工作常常卡在這些地方？</h2>
       <p style="color: var(--text-muted);">明明是簡單的需求，卻因為系統限制，變成了每天的惡夢。</p>
     </div>
-
     <div class="pain-grid">
       <div class="pain-card">
         <img src="https://i.meee.com.tw/Xhbd9Qc.png" alt="系統僵化">
@@ -847,21 +763,18 @@
         <p>只是一個小小的功能或報表需求，IT 卻說要排隊半年。求人不如求己，你希望能自己解決。</p>
       </div>
     </div>
-
     <div class="transition-text">
       其實，你不必等待救世主。<br>
       這堂課教你用現有工具，自己拯救自己的工作流程。
     </div>
   </div>
 </section>
-
 <section class="philosophy">
   <div class="container">
     <div style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
       <h2>好的工程，是把解法放在對的位置</h2>
       <p style="color: var(--text-muted);">不追求複雜技術，只追求解決眼前的真實問題。</p>
     </div>
-
     <div class="grid-3">
       <div class="feature-card">
         <div class="feature-icon">01</div>
@@ -879,15 +792,12 @@
         <p>我不教怎麼寫漂亮的架構，只教怎麼讓你在明天的工作中，準時下班。</p>
       </div>
     </div>
-
     <div class="philosophy-quote">
         <h3>別執著於工具</h3>
         <p>不特別推廣哪種程式語言。<br>語言只是工具<br>思維才是核心。</p>
     </div>
-
   </div>
 </section>
-
 <section class="bio-section">
   <div class="container">
     <div class="bio-layout">
@@ -900,7 +810,6 @@
             <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0; line-height: 1.5;">
               13+ 年實戰經驗。<br>擅長用最少資源，解決最雜的問題。
             </p>
-
             <div class="profile-links">
                 <a href="https://github.com/kencyue" target="_blank" class="profile-link" title="GitHub">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -914,11 +823,9 @@
           </div>
         </div>
       </aside>
-
       <div class="bio-text">
         <h2 style="color: #fff; margin-bottom: 24px;">從手刻代碼到 AI 賦能</h2>
         <p style="color: rgba(255,255,255,0.8);">技術是拿來用的，不是拿來秀的。這是我 13 年來的體悟。</p>
-
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-marker"></div>
@@ -928,7 +835,6 @@
               早期大家都用傻瓜軟體做網頁，但我為了更自由的排版，堅持鑽研原始碼。這種「想跳出框架」的性格，決定了我日後的開發風格。
             </p>
           </div>
-
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <span class="timeline-year">成長期</span>
@@ -937,7 +843,6 @@
               從靜態網頁進化到資料庫應用，我發現只要掌握資料流動，就能做出讓人驚艷的功能。這是我第一次體驗到「工程師的生產力」。
             </p>
           </div>
-
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <span class="timeline-year">實戰期</span>
@@ -946,7 +851,6 @@
               進入職場後，面對無法修改的老舊系統，我開始用「外掛式」的腳本與小工具，繞過限制解決問題，大幅提升部門效率。
             </p>
           </div>
-
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <span class="timeline-year">現在</span>
@@ -960,7 +864,6 @@
     </div>
   </div>
 </section>
-
 <!-- Bubbles Tech Section -->
 <section class="stack-section">
   <div class="container">
@@ -986,7 +889,6 @@
     </div>
   </div>
 </section>
-
 <!-- Dual Services CTA -->
 <section class="services-section" id="services">
   <div class="container">
@@ -994,7 +896,6 @@
       <h2>您希望如何解決問題？</h2>
       <p style="color: var(--text-muted); font-size: 1.1rem;">我們提供彈性的方案，依照您的時間與預算做選擇。</p>
     </div>
-
     <div class="services-grid">
       
       <!-- Option 1: Course -->
@@ -1009,7 +910,6 @@
         </div>
         <a href="#" class="btn btn-primary">瀏覽實戰課程</a>
       </div>
-
       <!-- Option 2: Outsourcing -->
       <div class="service-card">
         <div>
@@ -1022,17 +922,14 @@
         </div>
         <a href="mailto:your@email.com?subject=預約客製化諮詢&body=您好，我想預約諮詢：%0D%0A%0D%0A1. 專案類型：%0D%0A2. 預算區間：%0D%0A3. 預計時程：" class="btn btn-outline">預約客製化諮詢</a>
       </div>
-
     </div>
   </div>
 </section>
-
 <footer>
   <div class="container">
     © 2026 Workplace Plugin Engineering
   </div>
 </footer>
-
 <!-- ============================= -->
 <!-- Portfolio Showcase Modal      -->
 <!-- ============================= -->
@@ -1045,72 +942,54 @@
       <p>這裡收錄了我過往的一些專案，部分可線上瀏覽或下載體驗，部分僅為概念展示。如需進一步了解，歡迎與我聯繫。</p>
     </div>
     <div class="portfolio-grid" id="portfolio-grid">
-      <!-- 作品卡片會由下方 JS 自動產生 -->
+      <!-- 作品卡片會由下方 JS 從 portfolio.json 讀取後自動產生 -->
     </div>
   </div>
 </div>
-
 <script>
   // ============================================
-  // 在這裡編輯你的作品資料即可，卡片會自動產生
-  // type: "url" 表示連結可直接瀏覽；"download" 表示提供下載
+  // 作品資料改放在同資料夾底下的 portfolio.json，
+  // 之後新增/修改作品只要編輯那個檔案，不用碰這支 HTML。
+  //
+  // portfolio.json 格式（陣列，每筆一個物件）：
+  // [
+  //   {
+  //     "image": "圖片路徑或網址",
+  //     "title": "作品標題",
+  //     "description": "作品介紹",
+  //     "link": "網址或下載連結（type 為 none 時可省略）",
+  //     "type": "url"      // "url" 線上瀏覽 / "download" 可下載 / "none" 僅供展示
+  //   },
+  //   ...
+  // ]
+  //
+  // 注意：用 fetch() 讀取 JSON 檔在大多數瀏覽器裡需要透過
+  // http:// 伺服器開啟（例如你現有的 AlwaysData 空間），
+  // 如果直接雙擊用 file:// 開啟這支 HTML，瀏覽器會擋下這個請求，
+  // 畫面會顯示錯誤提示，這是正常現象，上傳到伺服器後就會正常。
   // ============================================
-  const portfolioItems = [
-    {
-      image: "./works/ai.png",
-      title: "Panasonic 冷氣維修專業顧問",
-      description: "Panasonic空調線上維修AI機器人",
-      link: "https://panasonic-ai-a5365.web.app",
-      type: "url"
-    },
-    {
-      image: "./works/hvactool.png",
-      title: "Panasonic HVAC 工具箱",
-      description: "整合所有Panasonic空調維修常用工具",
-      link: "https://kcpdeep.alwaysdata.net/",
-      type: "url"
-    },
-    {
-      image: "./works/linebot.png",
-      title: "Linebot備份機器人",
-      description: "可備份所有LINE對話內容及圖片、檔案，並支援後台自動回覆設定，也可撰寫自動回覆模組。",
-      type: "none"
-    },
-    {
-      image: "./works/LineChatAnalyzer.png",
-      title: "Line對話紀錄分析器",
-      description: "可分析LINE對話記錄做主題性分析，也可客製生成企業內部報表。",
-      type: "none"
-    }
-  ];
+  const PORTFOLIO_JSON_URL = './portfolio.json';
 
-  // type 對照：
-  //   "url"      -> 藍色標籤「線上瀏覽」，按鈕開新分頁前往 link
-  //   "download" -> 綠色標籤「可下載」，按鈕觸發下載 link
-  //   "none"     -> 灰色標籤「僅供展示」，不放按鈕，只顯示一行說明文字（可不填 link）
   const TAG_LABEL = { url: '線上瀏覽', download: '可下載', none: '僅供展示' };
   const ACTION_LABEL = { url: '前往查看 ↗', download: '下載作品 ⬇' };
 
-  function renderPortfolio() {
+  function renderPortfolio(items) {
     const grid = document.getElementById('portfolio-grid');
     grid.innerHTML = '';
 
-    if (!portfolioItems.length) {
+    if (!items || !items.length) {
       grid.innerHTML = '<div class="portfolio-empty">目前尚未新增作品，敬請期待。</div>';
       return;
     }
 
-    portfolioItems.forEach(item => {
+    items.forEach(item => {
       const type = (item.type === 'download' || item.type === 'url') ? item.type : 'none';
       const isStatic = type === 'none';
-
       const card = document.createElement('div');
       card.className = 'portfolio-card' + (isStatic ? ' is-static' : '');
-
       const actionHtml = isStatic
         ? `<span class="portfolio-card-action is-static">尚未公開連結</span>`
         : `<a class="portfolio-card-action" href="${item.link}" ${type === 'download' ? 'download' : 'target="_blank" rel="noopener"'}>${ACTION_LABEL[type]}</a>`;
-
       card.innerHTML = `
         <div class="portfolio-card-shot">
           <div class="portfolio-card-browserbar">
@@ -1131,9 +1010,41 @@
     });
   }
 
+  function renderPortfolioError() {
+    const grid = document.getElementById('portfolio-grid');
+    grid.innerHTML = `
+      <div class="portfolio-error">
+        作品資料載入失敗，請確認 <code>portfolio.json</code> 與這支 HTML 放在同一個資料夾，
+        並且透過 http:// 伺服器開啟（直接雙擊 HTML 檔用 file:// 開啟會被瀏覽器擋下）。
+      </div>
+    `;
+  }
+
+  let portfolioLoaded = false;
+  let portfolioLoading = null;
+
+  function loadPortfolio() {
+    if (portfolioLoading) return portfolioLoading;
+    portfolioLoading = fetch(PORTFOLIO_JSON_URL, { cache: 'no-cache' })
+      .then(res => {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(data => {
+        renderPortfolio(data);
+        portfolioLoaded = true;
+      })
+      .catch(err => {
+        console.error('portfolio.json 載入失敗：', err);
+        renderPortfolioError();
+      });
+    return portfolioLoading;
+  }
+
   function openPortfolioModal() {
     document.getElementById('portfolio-overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
+    if (!portfolioLoaded) loadPortfolio();
   }
 
   function closePortfolioModal() {
@@ -1149,9 +1060,6 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closePortfolioModal();
   });
-
-  renderPortfolio();
 </script>
-
 </body>
 </html>
