@@ -67,8 +67,8 @@
     "image": "./works/torrent.jpg",
     "title": "Simple Torrent",
     "description": "一個沒有廣告、沒有內建追蹤的簡易 BitTorrent 下載 app。",
-    "link": "",
-    "type": "none",
+    "link": "https://github.com/kencyue/SimpleTorrent",
+    "type": "url",
     "category": "個人專案"
   },
   {
