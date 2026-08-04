@@ -35,17 +35,15 @@
     font-weight: 700;
     margin-top: 0;
     line-height: 1.3;
-    word-break: keep-all; 
+    word-break: keep-all;
   }
   p { margin-bottom: 1.2rem; }
   a { text-decoration: none; transition: 0.3s; }
-  /* Layout */
   .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 24px;
   }
-  
   .badge {
     display: inline-block;
     padding: 8px 24px;
@@ -62,7 +60,6 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
   html { scroll-behavior: smooth; scroll-padding-top: 64px; }
-  /* Sticky page nav */
   .page-nav {
     position: sticky;
     top: 0;
@@ -103,7 +100,6 @@
     margin-left: 8px;
   }
   .page-nav-cta:hover { background: var(--accent-hover); color: #fff; }
-  /* Hero Section */
   .hero {
     position: relative;
     padding: 160px 0 120px;
@@ -140,7 +136,6 @@
     margin: 0 auto 40px;
     font-weight: 300;
   }
-  /* Pain Points */
   .pain-points {
     padding: 80px 0;
     background: #fff;
@@ -162,10 +157,9 @@
     padding: 40px 32px;
     border-radius: 16px;
     border: 1px solid #fed7d7;
-    text-align: center; /* 改為置中對齊 */
+    text-align: center;
     transition: transform 0.3s;
   }
-  
   .pain-card:hover {
     transform: translateY(-5px);
   }
@@ -174,16 +168,14 @@
     margin-bottom: 16px;
     font-size: 1.5rem;
   }
-  
   .pain-card img {
-    width: 200px; /* 大幅增加圖片尺寸 */
+    width: 200px;
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto 24px; /* 置中並增加下方間距 */
-    border-radius: 16px; /* 增加圓角 */
+    margin: 0 auto 24px;
+    border-radius: 16px;
   }
-  
   .pain-card p { color: #4a5568; margin: 0 0 16px; font-size: 1rem; }
   .pain-example {
     display: inline-block;
@@ -202,7 +194,6 @@
     font-weight: 600;
     color: var(--text-dark);
   }
-  /* Philosophy */
   .philosophy {
     padding: 100px 0;
     background: var(--bg-light);
@@ -220,7 +211,6 @@
     transition: transform 0.3s ease;
     box-shadow: var(--card-shadow);
   }
-  
   .feature-card:hover {
     transform: translateY(-5px);
     border-color: var(--accent);
@@ -247,7 +237,6 @@
     border: 2px solid var(--accent);
     box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
   }
-  
   .philosophy-quote h3 {
     color: var(--accent);
     margin-bottom: 12px;
@@ -259,7 +248,6 @@
     font-weight: 500;
     font-size: 1.15rem;
   }
-  /* Case Studies */
   .case-section {
     padding: 100px 0;
     background: #ffffff;
@@ -335,7 +323,6 @@
     color: var(--accent);
     font-size: 1.05rem;
   }
-  /* Bio Section */
   .bio-section {
     padding: 100px 0;
     background: var(--primary);
@@ -366,7 +353,6 @@
     border: 4px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 20px;
   }
-  /* Social Links for Profile */
   .profile-links {
     display: flex;
     gap: 12px;
@@ -374,7 +360,6 @@
     justify-content: center;
     flex-wrap: wrap;
   }
-  
   .profile-link {
     display: flex;
     align-items: center;
@@ -396,7 +381,6 @@
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
   }
-  
   .profile-link svg {
     width: 18px;
     height: 18px;
@@ -425,13 +409,11 @@
   }
   .timeline-title { color: #ffffff; font-size: 1.25rem; margin-bottom: 8px; }
   .timeline-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); margin: 0; }
-  /* Stack Section - Bubbles Edition */
   .stack-section {
     padding: 100px 0;
     background: #ffffff;
-    text-align: center; /* Center align section content */
+    text-align: center;
   }
-  
   .stack-container {
     max-width: 900px;
     margin: 0 auto;
@@ -444,7 +426,7 @@
   .bubble-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center bubbles */
+    justify-content: center;
     gap: 16px;
     margin-top: 48px;
   }
@@ -476,19 +458,16 @@
     border-color: #bfdbfe;
     font-weight: 600;
   }
-  
   .bubble.highlight:hover {
     background: var(--accent);
     color: #ffffff;
     box-shadow: 0 12px 20px -8px rgba(37, 99, 235, 0.4);
   }
-  /* CTA */
   .cta {
     padding: 100px 0;
     text-align: center;
     background: var(--bg-light);
   }
-  /* Dual Service CTA Section (Updated) */
   .services-section {
     padding: 100px 0;
     background: var(--bg-light);
@@ -510,14 +489,14 @@
     background: #ffffff;
     padding: 48px 32px;
     border-radius: 24px;
-    text-align: center; /* Base centering for text */
+    text-align: center;
     border: 1px solid var(--border);
     transition: transform 0.3s;
     box-shadow: var(--card-shadow);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center; /* FORCE CENTER ALIGNMENT FLEX ITEMS */
+    align-items: center;
   }
   .service-card:hover {
     transform: translateY(-8px);
@@ -565,10 +544,9 @@
     font-size: 1rem;
     line-height: 1.6;
   }
-  /* Button Updated to Force Center */
   .btn {
-    display: inline-flex; /* Use flexbox for button content */
-    justify-content: center; /* Center text inside button */
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
     padding: 16px 40px;
     border-radius: 99px;
@@ -577,9 +555,10 @@
     transition: all 0.2s;
     text-decoration: none;
     width: 100%;
-    text-align: center; /* Fallback */
+    text-align: center;
+    cursor: pointer;
+    border: none;
   }
-  /* Primary Button (Course) */
   .btn-primary {
     background: var(--accent);
     color: #ffffff;
@@ -589,7 +568,6 @@
     background: var(--accent-hover);
     transform: translateY(-2px);
   }
-  /* Outline Button (Service) */
   .btn-outline {
     background: transparent;
     color: var(--accent);
@@ -600,7 +578,6 @@
     color: #ffffff;
     transform: translateY(-2px);
   }
-  /* Service Link Styles */
   .service-link {
     display: inline-block;
     margin-top: 48px;
@@ -610,14 +587,13 @@
     border-bottom: 1px solid transparent;
     padding-bottom: 2px;
   }
-  
   .service-link:hover {
     color: var(--accent);
     border-bottom-color: var(--accent);
   }
   footer {
     padding: 40px 0;
-    text-align: center; /* Center Footer */
+    text-align: center;
     color: var(--text-muted);
     font-size: 0.9rem;
     background: #ffffff;
@@ -754,8 +730,6 @@
     box-shadow: none;
     border-color: var(--border);
   }
-  /* Screenshot shown inside a lightweight "browser window" frame so raw
-     app/UI screenshots feel like a curated shot instead of a random crop. */
   .portfolio-card-shot {
     background: #e7ebf1;
     padding: 14px 14px 0;
@@ -826,7 +800,6 @@
     background: var(--accent);
     color: #fff;
   }
-  /* Static state: no url/download available, so it's plain text, not a button */
   .portfolio-card-action.is-static {
     border-color: transparent;
     background: var(--bg-light);
@@ -883,6 +856,137 @@
     .portfolio-modal-header h2 { font-size: 1.5rem; }
     .portfolio-grid { grid-template-columns: 1fr; }
   }
+
+  /* ============================= */
+  /* Contact Form (Formspree)      */
+  /* ============================= */
+  .contact-form {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: 0.2s;
+  }
+  .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  }
+  .contact-form button[type="submit"] {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .contact-form button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+  .form-status {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    text-align: center;
+    display: none;
+  }
+  .form-status.success { color: #16a34a; display: block; }
+  .form-status.error { color: #b91c1c; display: block; }
+  .form-fallback {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .form-fallback a { color: var(--accent); font-weight: 600; }
+
+  /* ============================= */
+  /* Contact Form Modal            */
+  /* ============================= */
+  .contact-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+  }
+  .contact-modal-overlay.open {
+    display: flex;
+    animation: fadeIn 0.25s ease;
+  }
+  .contact-modal {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.3s ease;
+  }
+  .contact-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+  }
+  .contact-modal-close:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    transform: rotate(90deg);
+  }
+  .contact-modal h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  .contact-modal > p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
   /* RWD */
   @media (max-width: 900px) {
     .hero {
@@ -893,8 +997,8 @@
     .profile-card { position: static; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; padding: 32px; }
     .avatar { width: 120px; height: 120px; margin-bottom: 16px; }
     .profile-info { width: 100%; }
-    .profile-links { justify-content: center; } /* 手機版置中 */
-    .services-grid { grid-template-columns: 1fr; max-width: 500px; } 
+    .profile-links { justify-content: center; }
+    .services-grid { grid-template-columns: 1fr; max-width: 500px; }
     .stack-container h2 { font-size: 2rem; }
     .bubble { font-size: 0.95rem; padding: 10px 20px; }
   }
@@ -918,6 +1022,7 @@
 </style>
 </head>
 <body>
+
 <section class="hero">
   <div class="container">
     <span class="badge">Workplace Plugin Engineering</span>
@@ -929,6 +1034,7 @@
     <a href="#intro" style="color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.3); font-size: 0.9rem;">探索更多 ↓</a>
   </div>
 </section>
+
 <nav class="page-nav" id="page-nav">
   <div class="page-nav-inner">
     <a href="#intro" class="page-nav-link">痛點</a>
@@ -939,6 +1045,7 @@
     <a href="#services" class="page-nav-link page-nav-cta">聯絡我</a>
   </div>
 </nav>
+
 <!-- Pain Points -->
 <section class="pain-points" id="intro">
   <div class="container">
@@ -971,6 +1078,7 @@
     </div>
   </div>
 </section>
+
 <section class="philosophy" id="philosophy">
   <div class="container">
     <div style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
@@ -995,11 +1103,12 @@
       </div>
     </div>
     <div class="philosophy-quote">
-        <h3>別執著於工具</h3>
-        <p>不特別推廣哪種程式語言。<br>語言只是工具<br>思維才是核心。</p>
+      <h3>別執著於工具</h3>
+      <p>不特別推廣哪種程式語言。<br>語言只是工具<br>思維才是核心。</p>
     </div>
   </div>
 </section>
+
 <!-- Real Case Studies -->
 <section class="case-section" id="cases">
   <div class="container">
@@ -1044,6 +1153,7 @@
     </div>
   </div>
 </section>
+
 <section class="bio-section" id="about">
   <div class="container">
     <div class="bio-layout">
@@ -1057,14 +1167,14 @@
               13+ 年實戰經驗。<br>擅長用最少資源，解決最雜的問題。
             </p>
             <div class="profile-links">
-                <a href="https://github.com/kencyue" target="_blank" class="profile-link" title="GitHub">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                    <span>GitHub</span>
-                </a>
-                <a href="javascript:void(0)" class="profile-link" title="作品集" id="portfolio-btn">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
-                    <span>作品集</span>
-                </a>
+              <a href="https://github.com/kencyue" target="_blank" class="profile-link" title="GitHub">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="javascript:void(0)" class="profile-link" title="作品集" id="portfolio-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                <span>作品集</span>
+              </a>
             </div>
           </div>
         </div>
@@ -1110,6 +1220,7 @@
     </div>
   </div>
 </section>
+
 <!-- Bubbles Tech Section -->
 <section class="stack-section" id="stack">
   <div class="container">
@@ -1118,7 +1229,6 @@
       <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
         不套用固定方案，依照你的系統與需求，選最合適、最省成本的做法。
       </p>
-      
       <div class="bubble-container">
         <span class="bubble highlight">瀏覽器端外掛開發</span>
         <span class="bubble highlight">AI 協作開發</span>
@@ -1131,6 +1241,7 @@
     </div>
   </div>
 </section>
+
 <!-- Custom Service CTA -->
 <section class="services-section" id="services">
   <div class="container">
@@ -1151,17 +1262,23 @@
             <li>報價透明，不會做到一半再加價</li>
             <li>交付後附使用說明，不是丟給你就結束</li>
           </ul>
+
+          <!-- 改成一顆觸發按鈕 -->
+          <button type="button" id="open-contact-btn" class="btn btn-primary">開啟聯絡表單</button>
+
+          <p class="form-fallback">或直接寄信給我：<a href="mailto:jingsyuan@email.com">jingsyuan@gmail.com</a></p>
         </div>
-        <a href="mailto:your@email.com?subject=預約客製化諮詢&body=您好，我想預約諮詢：%0D%0A%0D%0A1. 目前卡住的工作流程：%0D%0A2. 大概的時程需求：%0D%0A3. 方便聯繫的時間：" class="btn btn-primary">免費聊聊你的問題</a>
       </div>
     </div>
   </div>
 </section>
+
 <footer>
   <div class="container">
     © 2026 Workplace Plugin Engineering
   </div>
 </footer>
+
 <!-- ============================= -->
 <!-- Portfolio Showcase Modal      -->
 <!-- ============================= -->
@@ -1181,6 +1298,32 @@
     </div>
   </div>
 </div>
+
+<!-- ============================= -->
+<!-- Contact Form Modal            -->
+<!-- ============================= -->
+<div class="contact-modal-overlay" id="contact-overlay">
+  <div class="contact-modal">
+    <button class="contact-modal-close" id="contact-close" aria-label="關閉">&times;</button>
+    <h3>聯絡我</h3>
+    <p>請簡單描述目前卡住的工作流程，我會盡快回覆您。</p>
+    
+    <!-- 原本的 Formspree 表單移到這裡 -->
+    <form id="contact-form" class="contact-form" action="https://formspree.io/f/xyeggbpp" method="POST">
+      <div class="form-group">
+        <label for="cf-email">您的 Email</label>
+        <input type="email" id="cf-email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label for="cf-message">想解決的問題</label>
+        <textarea id="cf-message" name="message" required placeholder="請簡單描述目前卡住的工作流程..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">送出諮詢需求</button>
+      <p id="cf-status" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
 <script>
   // ============================================
   // 作品資料改放在同資料夾底下的 portfolio.json，
@@ -1208,7 +1351,6 @@
   // 畫面會顯示錯誤提示，這是正常現象，上傳到伺服器後就會正常。
   // ============================================
   const PORTFOLIO_JSON_URL = './portfolio.json';
-
   const TAG_LABEL = { url: '線上瀏覽', download: '可下載', none: '僅供展示' };
   const ACTION_LABEL = { url: '前往查看 ↗', download: '下載作品 ⬇' };
   const ALL_TAB = '全部';
@@ -1229,7 +1371,6 @@
       if (!categories.includes(cat)) categories.push(cat);
     });
 
-    // 只有一種分類時不需要顯示頁籤
     if (categories.length <= 1) {
       tabWrap.innerHTML = '';
       currentCategory = ALL_TAB;
@@ -1360,13 +1501,81 @@
 
     sections.forEach(s => observer.observe(s));
   })();
+
   document.getElementById('portfolio-close').addEventListener('click', closePortfolioModal);
   document.getElementById('portfolio-overlay').addEventListener('click', function (e) {
     if (e.target === this) closePortfolioModal();
   });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closePortfolioModal();
+
+  // ============================================
+  // 聯絡表單 Modal 控制邏輯
+  // ============================================
+  function openContactModal() {
+    document.getElementById('contact-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeContactModal() {
+    document.getElementById('contact-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('open-contact-btn').addEventListener('click', openContactModal);
+  document.getElementById('contact-close').addEventListener('click', closeContactModal);
+  document.getElementById('contact-overlay').addEventListener('click', function (e) {
+    if (e.target === this) closeContactModal();
   });
+
+  // 更新 Esc 鍵行為：同時支援關閉作品集與聯絡表單
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closePortfolioModal();
+      closeContactModal();
+    }
+  });
+
+  // ============================================
+  // Formspree 聯絡表單：用 fetch 攔截送出，
+  // 避免整頁跳轉到 Formspree 的空白確認頁，
+  // 改成在原頁面顯示成功/失敗訊息。
+  // ============================================
+  (function () {
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('cf-status');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '送出中...';
+      status.className = 'form-status';
+      status.textContent = '';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          status.className = 'form-status success';
+          status.textContent = '已收到您的訊息，我會盡快回覆！';
+          form.reset();
+        } else {
+          throw new Error('送出失敗');
+        }
+      } catch (err) {
+        status.className = 'form-status error';
+        status.textContent = '送出失敗，請稍後再試，或直接寄信給我。';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    });
+  })();
 </script>
+
 </body>
 </html>
