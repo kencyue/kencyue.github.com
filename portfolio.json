@@ -72,6 +72,14 @@
     "category": "個人專案"
   },
   {
+    "image": "./works/secure.png",
+    "title": "密碼快捷面板",
+    "description": "本機儲存 + 生物辨識鎖定的個人密碼管理 App（Android / iOS）。所有資料只存在裝置本機，不上傳任何伺服器。",
+    "link": "https://github.com/kencyue/secure-vault-app",
+    "type": "url",
+    "category": "個人專案"
+  },
+  {
     "image": "./works/pointsystem.png",
     "title": "親子點數管理系統",
     "description": "親子共用的點數系統，結合遊戲化的任務完成機制，每個孩子還有專屬的介面配色。",
