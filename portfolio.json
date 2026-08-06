@@ -80,7 +80,7 @@
     "category": "個人專案"
   },
   {
-    "image": "./works/account.png",
+    "image": "./works/account.jpg",
     "title": "口袋記帳 Pro",
     "description": "一款記帳 App，資料完全存在裝置本機（JSON 檔案），透過 Capacitor 包裝成真正的 iOS / Android App，沒有瀏覽器工具列，離線也能用。",
     "link": "https://github.com/kencyue/pocket-account-app",
