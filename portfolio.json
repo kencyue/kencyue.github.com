@@ -2,8 +2,8 @@
   {
     "image": "./works/ai.png",
     "title": "冷氣維修專業顧問",
-    "description": "空調線上維修 AI 機器人",
-    "link": "https://panasonic-ai-a5365.web.app",
+    "description": "純前端、無後端伺服器的維修 AI 助理。知識庫檢索採「故障代碼精確比對」+「語意向量搜尋」雙軌並行，向量化運算全部在使用者瀏覽器端完成（Transformers.js + Web Worker），不需要自架任何後端服務。",
+    "link": "https://panasonic-ai-vector-kb.web.app/",
     "type": "url",
     "category": "空調維修工具"
   },
