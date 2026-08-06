@@ -80,6 +80,14 @@
     "category": "個人專案"
   },
   {
+    "image": "./works/account.png",
+    "title": "口袋記帳 Pro",
+    "description": "一款記帳 App，資料完全存在裝置本機（JSON 檔案），透過 Capacitor 包裝成真正的 iOS / Android App，沒有瀏覽器工具列，離線也能用。",
+    "link": "https://github.com/kencyue/pocket-account-app",
+    "type": "url",
+    "category": "個人專案"
+  },
+  {
     "image": "./works/pointsystem.png",
     "title": "親子點數管理系統",
     "description": "親子共用的點數系統，結合遊戲化的任務完成機制，每個孩子還有專屬的介面配色。",
