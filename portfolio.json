@@ -118,5 +118,21 @@
     "link": "",
     "type": "none",
     "category": "個人專案"
-  }
+  },
+  {
+    "image": "./works/story.png",
+    "title": "Magic Storybook Pro AI繪本",
+    "description": "Magic Storybook Pro 是一個基於 React 的網頁應用程式，利用 Google Gemini AI 模型來自動生成客製化的圖文故事書或插畫小說。使用者只需設定主角外觀、世界觀與畫風，AI 就能包辦劇本創作與逐頁插圖生成，帶來獨一無二的閱讀體驗。",
+    "link": "https://gemini.google.com/share/707b4d5e5dae",
+    "type": "url",
+    "category": "Gemini Canvas應用"
+  },
+  {
+    "image": "./works/norwegian.png",
+    "title": "《挪威的森林》互動記憶引擎",
+    "description": "本專案是一個結合村上春樹經典文學與 Google 最新 Gemini AI 技術的實驗性視覺小說 (Visual Novel) 引擎。不同於傳統將所有分支路線寫死的遊戲，本專案透過捕捉玩家的「選擇」，利用大型語言模型 (LLM) 即時推演劇情發展，並同步呼叫影像生成模型產生對應的遊戲 CG (Computer Graphics)。玩家的每一次遊玩，都是一場獨一無二、由 AI 現場編織的文學體驗。",
+    "link": "https://share.gemini.google/5IcDviZ85Vfm",
+    "type": "url",
+    "category": "Gemini Canvas應用"
+  },
 ]
