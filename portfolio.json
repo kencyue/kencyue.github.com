@@ -121,9 +121,9 @@
   },
   {
     "image": "./works/story.png",
-    "title": "Magic Storybook Pro AI繪本",
-    "description": "Magic Storybook Pro 是一個基於 React 的網頁應用程式，利用 Google Gemini AI 模型來自動生成客製化的圖文故事書或插畫小說。使用者只需設定主角外觀、世界觀與畫風，AI 就能包辦劇本創作與逐頁插圖生成，帶來獨一無二的閱讀體驗。",
-    "link": "https://gemini.google.com/share/707b4d5e5dae",
+    "title": "魔法繪本 Pro",
+    "description": "魔法繪本 Pro 是一款基於最新生成式 AI 技術打造的「一站式互動故事書生成器」。使用者只需透過簡單的點擊與設定，就能創造出擁有專屬主角、豐富世界觀、以及一致性畫風的精美圖文故事書或插畫小說。",
+    "link": "https://share.gemini.google/OXIhzdix0LAq",
     "type": "url",
     "category": "Gemini Canvas應用"
   },
